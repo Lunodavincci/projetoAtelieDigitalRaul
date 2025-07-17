@@ -41,8 +41,9 @@ a:hover {
 }
 
 img {
-    max-width: 100%;
+    max-width: 200px;
     height: auto;
+    align-items: center;
     display: block;
 }
 
@@ -92,11 +93,15 @@ header {
 }
 
 header .logo {
+    display: block;
+    max-height: 200px;
+    justify-content: center;
     margin-bottom: 0px;
 }
 
 header .logo img {
-    max-height: 100px; /* Logo maior em mobile também */
+    justify-content: center;
+    max-height: 200px; /* Logo maior em mobile também */
     margin: 0 auto;
 }
 
@@ -161,14 +166,12 @@ footer address p {
 
 /* Navegação (Menu Principal) - Mobile-First */
 .main-nav {
+    display: block;
     width: 100%;
 }
+
 .main-nav ul {
-    display: flex;
-    flex-direction: column;
-    gap: 5px; /* Reduz o gap para itens mais próximos */
-    padding: 0;
-    width: 100%;
+    justify-content: center;
 }
 
 .main-nav ul li {
