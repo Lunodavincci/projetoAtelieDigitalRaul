@@ -41,9 +41,7 @@ a:hover {
 }
 
 img {
-    height: auto;
-    align-items: center;
-    display: block;
+    max-width: 100%;
 }
 
 h1, h2, h3 {
