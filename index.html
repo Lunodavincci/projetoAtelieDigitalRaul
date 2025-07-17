@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ateliê Digital - Início</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/icon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <button class="sidebar-menu-toggle">&#9776;</button> 
+
+        <figure class="logo">
+            <img src="images/logo.jpg" alt="Logo Ateliê Digital">
+            <figcaption class="sr-only">Ateliê Digital - Sua plataforma de arte</figcaption>
+        </figure>
+        <h1>Bem-vindo ao Ateliê Digital</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="pages/explorar.html">Explorar</a></li>
+                <li><a href="pages/perfil.html">Artistas</a></li>
+                <li><a href="pages/contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <aside class="sidebar-menu">
+        <header class="sidebar-header">
+            <figure class="logo">
+                <img src="images/logo.jpg" alt="Logo Ateliê Digital">
+                <figcaption class="sr-only">Ateliê Digital - Logo do Menu Lateral</figcaption>
+            </figure>
+            <h2>Ateliê Digital</h2>
+        </header>
+        
+        <section class="welcome-content">
+            <h3>Bem-vindo!</h3>
+            <p>Sua plataforma para explorar e conectar-se com o vasto mundo da arte. Descubra obras de talentosos artistas, de pintura a design digital, fotografia e performances. Navegue por categorias e inspire-se na criatividade.</p>
+        </section>
+
+        <nav>
+            <ul>
+                <li><a href="pages/explorar.html">Explorar Arte</a></li>
+                <li><a href="pages/perfil.html">Artistas em Destaque</a></li>
+                <li class="dropdown-sidebar">
+                    <a href="#">Categorias de Arte &#9662;</a>
+                    <ul class="dropdown-sidebar-content">
+                        <li><a href="pages/explorar.html#pintura">Pintura</a></li>
+                        <li><a href="pages/explorar.html#escultura">Escultura</a></li>
+                        <li><a href="pages/explorar.html#fotografia">Fotografia</a></li>
+                        <li><a href="pages/explorar.html#design">Design Digital</a></li>
+                        <li><a href="pages/explorar.html#ilustracao">Ilustração</a></li>
+                        <li><a href="pages/explorar.html#musica">Música Experimental</a></li>
+                        <li><a href="pages/explorar.html#performance">Performance</a></li>
+                        <li><a href="pages/explorar.html#todos">Todas as Categorias</a></li>
+                    </ul>
+                </li>
+                <li><a href="pages/contato.html">Envie sua Arte</a></li>
+                <li><a href="pages/explorar.html">Eventos e Notícias</a></li>
+                <li><a href="pages/explorar.html">Sobre Nós</a></li>
+                <li><a href="pages/contato.html">Suporte</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main id="main-content">
+        <section id="feed-instagram">
+            <h2>Feed de Obras</h2>
+            <article class="post-instagram">
+                <header>
+                    <img src="images/perfil_exemplo.jpg" alt="Foto de perfil de Artista X" class="profile-pic">
+                    <h3>Artista X</h3>
+                </header>
+                <figure class="post-image">
+                    <img src="images/obra1.jpg" alt="Título da Obra 1">
+                    <figcaption class="sr-only">Obra de Arte: Título da Obra 1</figcaption>
+                </figure>
+                <p class="post-content">Uma peça que explora as cores e formas abstratas, criando um universo vibrante e introspectivo. #arteabstrata #cores #inspiracao</p>
+                <div class="post-actions">
+                    <button>&#x2764;</button>
+                    <button>&#x1F4AD;</button>
+                    <span class="comment-count">12 comentários</span>
+                </div>
+            </article>
+
+            <article class="post-instagram">
+                <header>
+                    <img src="images/perfil_ana.jpg" alt="Foto de perfil de Ana Silva" class="profile-pic">
+                    <h3>Ana Silva</h3>
+                </header>
+                <figure class="post-image">
+                    <img src="images/obra_ana_1.jpg" alt="Harmonia Cromática">
+                    <figcaption class="sr-only">Obra de Arte: Harmonia Cromática</figcaption>
+                </figure>
+                <p class="post-content">Minha nova série "Harmonia Cromática" busca equilibrar tons quentes e frios para evocar sensações de paz e energia. Adoro este processo! #pintura #arte #artista</p>
+                <div class="post-actions">
+                    <button>&#x2764;</button>
+                    <button>&#x1F4AD;</button>
+                    <span class="comment-count">25 comentários</span>
+                </div>
+            </article>
+
+            <article class="post-instagram">
+                <header>
+                    <img src="images/perfil_exemplo.jpg" alt="Foto de perfil de Artista Z" class="profile-pic">
+                    <h3>Artista Z</h3>
+                </header>
+                <figure class="post-image">
+                    <img src="images/obra3.jpg" alt="Cenas da Cidade">
+                    <figcaption class="sr-only">Obra de Arte: Cenas da Cidade</figcaption>
+                </figure>
+                <p class="post-content">Capturando a alma da cidade através das lentes. Cada rua, uma nova história. #fotografiaurbana #cidade #streetart</p>
+                <div class="post-actions">
+                    <button>&#x2764;</button>
+                    <button>&#x1F4AD;</button>
+                    <span class="comment-count">8 comentários</span>
+                </div>
+            </article>
+        </section>
+
+        <section id="novidades">
+            <h2>Últimas Novidades</h2>
+            <article class="noticia">
+                <h3>Exposição Virtual: Cores do Brasil</h3>
+                <p>Descubra a nova exposição virtual com artistas emergentes do cenário brasileiro.</p>
+                <aside class="data-publicacao">
+                    <time datetime="2025-07-16">16 de Julho de 2025</time>
+                </aside>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <address>
+            <p>Ateliê Digital &copy; 2025</p>
+            <p>Contato: <a href="mailto:contato@ateliedigital.com">contato@ateliedigital.com</a></p>
+            <p>Endereço: Rua da Arte, 123 - Cidade Criativa - BR</p>
+        </address>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

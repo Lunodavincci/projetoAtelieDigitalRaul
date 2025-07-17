@@ -1,0 +1,838 @@
+/* Importação de fontes Google Fonts (mantido) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
+
+/* Variáveis CSS para CORES (mantidas do último ajuste) */
+:root {
+    --cor-fundo-principal: #121212; /* Preto mais escuro */
+    --cor-fundo-secundario: #1E1E1E; /* Preto um pouco mais claro para contraste */
+    --cor-bege-claro: #F5F5DC; /* Bege claro - Usado para fundos de seções importantes/conteúdo */
+    --cor-bege-escuro: #E0E0C0; /* Bege um pouco mais escuro para hover/bordas claras */
+    --cor-texto-claro: #F0F0F0; /* Branco para texto em fundo escuro */
+    --cor-texto-escuro: #333333; /* Preto para texto em fundo claro (bege) */
+    --cor-acento-vermelho: #E74C3C; /* Vermelho vivo */
+    --cor-borda-escura: #444444; /* Cinza escuro para bordas em fundos escuros */
+    --cor-borda-clara: #D0D0B0; /* Bege mais escuro para bordas em fundos claros */
+    --cor-hover-vermelho: #C0392B; /* Vermelho mais escuro para hover */
+}
+
+/* ----------------------------------------------------- */
+/* Estilos Base e Reset Básico (Mobile-First)          */
+/* ----------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--cor-texto-claro);
+    background-color: var(--cor-fundo-principal);
+    font-size: 16px;
+}
+
+a {
+    color: var(--cor-acento-vermelho);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--cor-hover-vermelho);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--cor-texto-claro);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.4em; }
+
+p {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* ----------------------------------------------------- */
+/* Layout Geral                                        */
+/* ----------------------------------------------------- */
+header {
+    background-color: var(--cor-fundo-secundario);
+    color: var(--cor-texto-claro);
+    padding: 20px 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    /* Adicionado padding-left para dar espaço ao menu lateral quando fechado */
+    padding-left: 70px; /* Largura do botão de toggle + margem */
+}
+
+/* Ajuste da logo e H1 para ficarem maiores e centralizados no espaço disponível */
+header .logo {
+    size: 200px;
+    margin-bottom: 0px; /* Reduz margem inferior para aproximar do nav */
+}
+
+header .logo img {
+    max-height: 90px; /* Logo maior */
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 2.2em; /* Título maior em mobile */
+    margin-top: 10px;
+}
+
+
+main {
+    padding: 20px 15px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+section {
+    background-color: var(--cor-bege-claro);
+    color: var(--cor-texto-escuro);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+section h2, section h3 {
+    color: var(--cor-texto-escuro);
+}
+section p, section li, section figcaption, section aside {
+    color: var(--cor-texto-escuro);
+}
+
+
+article {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--cor-borda-clara);
+}
+
+article:last-child {
+    border-bottom: none;
+}
+
+footer {
+    background-color: var(--cor-fundo-secundario);
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 20px 15px;
+    margin-top: 30px;
+    border-top: 1px solid var(--cor-borda-escura);
+}
+
+footer address {
+    font-style: normal;
+    margin-top: 10px;
+}
+
+footer address p {
+    margin-bottom: 5px;
+}
+
+/* ----------------------------------------------------- */
+/* Navegação (Menu Principal) - Mobile-First           */
+/* ----------------------------------------------------- */
+.main-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.main-nav ul li {
+    position: relative;
+    text-align: center;
+}
+
+.main-nav ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--cor-texto-claro);
+    background-color: var(--cor-fundo-principal);
+    border-radius: 5px;
+}
+
+.main-nav ul li a:hover {
+    background-color: var(--cor-hover-vermelho);
+}
+
+/* Menu Hambúrguer (Mobile) */
+.menu-toggle {
+    display: none;
+    background-color: var(--cor-acento-vermelho);
+    color: var(--cor-texto-claro);
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.main-nav.active ul {
+    display: flex;
+}
+
+/* ----------------------------------------------------- */
+/* Dropdown Menu Lateral (Específico para index.html)  */
+/* ----------------------------------------------------- */
+.sidebar-menu {
+    position: absolute; /* Para que não afete o layout normal */
+    left: 0;
+    top: 0; /* Alinha com o topo do header */
+    height: 100%; /* Altura total do header */
+    width: 250px; /* Largura do menu lateral */
+    background-color: var(--cor-fundo-secundario); /* Fundo do menu lateral em preto */
+    border-right: 1px solid var(--cor-borda-escura);
+    padding-top: 20px; /* Espaçamento do topo */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    z-index: 100;
+    transform: translateX(-100%); /* Escondido por padrão */
+    transition: transform 0.3s ease-in-out;
+    display: flex; /* Para organizar o conteúdo do sidebar */
+    flex-direction: column;
+    align-items: flex-start; /* Alinha itens à esquerda */
+}
+
+.sidebar-menu.open {
+    transform: translateX(0); /* Mostra o menu quando 'open' é adicionado */
+}
+
+.sidebar-menu-toggle {
+    position: absolute;
+    top: 20px; /* Alinha com o topo do header */
+    left: 20px; /* Mais perto da borda esquerda */
+    background-color: var(--cor-acento-vermelho);
+    color: var(--cor-texto-claro);
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    z-index: 101; /* Acima do sidebar */
+}
+
+/* Título e Logo dentro do sidebar */
+.sidebar-menu .sidebar-header {
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--cor-borda-escura);
+    margin-bottom: 15px;
+}
+
+.sidebar-menu .sidebar-header .logo img {
+    max-height: 50px; /* Logo menor dentro do sidebar */
+    margin: 0 auto 10px auto;
+}
+
+.sidebar-menu .sidebar-header h2 {
+    font-size: 1.5em; /* Título do sidebar */
+    color: var(--cor-texto-claro);
+    margin: 0;
+}
+
+/* Bem-vindo e explicação dentro do sidebar */
+.sidebar-menu .welcome-content {
+    padding: 0 20px 20px 20px;
+    font-size: 0.9em;
+    color: var(--cor-texto-claro);
+    text-align: justify;
+    border-bottom: 1px solid var(--cor-borda-escura);
+    margin-bottom: 15px;
+}
+.sidebar-menu .welcome-content p {
+    margin-bottom: 10px;
+}
+
+.sidebar-menu nav {
+    width: 100%; /* Navegação ocupa toda a largura do sidebar */
+}
+
+.sidebar-menu ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0; /* Remove padding extra da ul */
+    gap: 0; /* Remove gap */
+}
+
+.sidebar-menu ul li a {
+    display: block;
+    padding: 12px 20px; /* Mais padding para os itens do menu */
+    color: var(--cor-texto-claro);
+    font-size: 1em; /* Ajusta tamanho da fonte */
+    border-bottom: 1px solid var(--cor-borda-escura);
+    transition: background-color 0.2s ease, color 0.2s ease;
+    text-align: left; /* Alinha texto à esquerda */
+}
+
+.sidebar-menu ul li:last-child a {
+    border-bottom: none;
+}
+
+.sidebar-menu ul li a:hover {
+    background-color: var(--cor-hover-vermelho);
+    color: white;
+}
+
+/* Sub-menu dropdown dentro do sidebar */
+.sidebar-menu .dropdown-sidebar-content {
+    display: none;
+    background-color: #282828; /* Um tom mais escuro de preto */
+    padding-left: 20px; /* Indentação para sub-itens */
+    border-top: none; /* Remove borda extra */
+    border-bottom: 1px solid var(--cor-borda-escura); /* Adiciona borda inferior para separar */
+}
+.sidebar-menu li.dropdown-sidebar.open .dropdown-sidebar-content {
+    border-bottom: none; /* Remove borda inferior do item pai quando o sub-menu está aberto */
+}
+.sidebar-menu .dropdown-sidebar-content li:last-child a {
+    border-bottom: none; /* Último item do sub-menu sem borda */
+}
+
+
+.sidebar-menu .dropdown-sidebar-content li a {
+    font-size: 0.9em; /* Menor fonte para sub-itens */
+    padding: 10px 10px 10px 30px; /* Mais padding à esquerda para indentação visual */
+    border-bottom: none; /* Remove borda para sub-itens */
+}
+
+.sidebar-menu .dropdown-sidebar-content li:last-child a {
+    border-bottom: none;
+}
+
+.sidebar-menu .dropdown-sidebar-content a:hover {
+    background-color: #3A3A3A;
+}
+
+.sidebar-menu li.dropdown-sidebar.open .dropdown-sidebar-content {
+    display: block;
+}
+
+
+/* ----------------------------------------------------- */
+/* Estilos Específicos das Páginas                     */
+/* ----------------------------------------------------- */
+
+/* index.html - Layout estilo Instagram */
+#feed-instagram {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.post-instagram {
+    background-color: white;
+    border: 1px solid var(--cor-borda-clara);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.post-instagram header {
+    background-color: var(--cor-bege-claro);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--cor-borda-clara);
+    gap: 10px;
+}
+
+.post-instagram header .profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--cor-acento-vermelho);
+}
+
+.post-instagram header h3 {
+    margin: 0;
+    font-size: 1.1em;
+    color: var(--cor-texto-escuro);
+    text-align: left;
+}
+
+.post-instagram .post-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 500px;
+}
+
+.post-instagram .post-content {
+    padding: 15px;
+    color: var(--cor-texto-escuro);
+}
+
+.post-instagram .post-content p {
+    margin-bottom: 10px;
+}
+
+.post-instagram .post-actions {
+    padding: 0 15px 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.post-instagram .post-actions button {
+    background: none;
+    border: none;
+    color: var(--cor-acento-vermelho);
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.post-instagram .post-actions button:hover {
+    color: var(--cor-hover-vermelho);
+}
+
+.post-instagram .post-actions .comment-count {
+    font-size: 0.9em;
+    color: var(--cor-texto-escuro);
+}
+
+
+/* explorar.html - Layout estilo Pinterest */
+#galeria-pinterest {
+    column-count: 1; /* Uma coluna em mobile */
+    column-gap: 15px;
+    padding: 0;
+}
+
+.pin-card {
+    background-color: white;
+    border: 1px solid var(--cor-borda-clara);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    break-inside: avoid;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.pin-card figure {
+    margin-bottom: 10px;
+}
+
+.pin-card img {
+    border-radius: 5px;
+}
+
+.pin-card h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 1.1em;
+    color: var(--cor-texto-escuro);
+}
+
+.pin-card p {
+    font-size: 0.9em;
+    color: var(--cor-texto-escuro);
+}
+
+.pin-card .pin-meta {
+    font-size: 0.8em;
+    color: var(--cor-texto-escuro);
+    margin-top: 10px;
+}
+
+/* perfil.html - Perfil do Artista */
+#info-artista {
+    text-align: center;
+}
+
+.perfil-foto img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 15px auto;
+    border: 3px solid var(--cor-acento-vermelho);
+}
+
+#info-artista p {
+    max-width: 600px;
+    margin: 0 auto 15px auto;
+    text-align: justify;
+    color: var(--cor-texto-escuro);
+}
+
+aside.contato-redes {
+    margin-top: 20px;
+    background-color: var(--cor-fundo-secundario);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+    color: var(--cor-texto-claro);
+}
+
+aside.contato-redes h3 {
+    text-align: left;
+    margin-bottom: 10px;
+    color: var(--cor-texto-claro);
+}
+
+aside.contato-redes ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+aside.contato-redes address p {
+    margin: 0;
+    color: var(--cor-texto-claro);
+}
+
+.obra-portifolio {
+    border-top: 1px solid var(--cor-borda-clara);
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.obra-portifolio figure {
+    margin-bottom: 10px;
+}
+
+.obra-portifolio img {
+    border-radius: 5px;
+}
+
+.obra-portifolio h3 {
+    text-align: left;
+    margin-top: 10px;
+    color: var(--cor-texto-escuro);
+}
+.obra-portifolio p {
+    color: var(--cor-texto-escuro);
+}
+
+
+/* contato.html - Formulário */
+#formulario-contato {
+    background-color: var(--cor-bege-claro);
+    color: var(--cor-texto-escuro);
+}
+
+#formulario-contato form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+#formulario-contato label {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: var(--cor-texto-escuro);
+}
+
+#formulario-contato input[type="text"],
+#formulario-contato input[type="email"],
+#formulario-contato input[type="tel"],
+#formulario-contato input[type="url"],
+#formulario-contato select,
+#formulario-contato textarea {
+    padding: 10px;
+    border: 1px solid var(--cor-borda-clara);
+    border-radius: 5px;
+    width: 100%;
+    background-color: white;
+    color: var(--cor-texto-escuro);
+}
+
+#formulario-contato input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+#formulario-contato a {
+    color: var(--cor-acento-vermelho);
+}
+
+#formulario-contato button {
+    background-color: var(--cor-acento-vermelho);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+#formulario-contato button[type="reset"] {
+    background-color: var(--cor-borda-clara);
+    color: var(--cor-texto-escuro);
+}
+
+#formulario-contato button:hover {
+    background-color: var(--cor-hover-vermelho);
+}
+
+#formulario-contato button[type="reset"]:hover {
+    background-color: var(--cor-bege-escuro);
+}
+
+#dadosExibidos {
+    background-color: var(--cor-fundo-secundario);
+    border: 1px dashed var(--cor-acento-vermelho);
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    font-family: monospace;
+    color: var(--cor-texto-claro);
+}
+
+#dadosExibidos h3 {
+    text-align: left;
+    margin-bottom: 10px;
+    color: var(--cor-texto-claro);
+}
+
+/* ----------------------------------------------------- */
+/* Media Queries - Responsividade                      */
+/* ----------------------------------------------------- */
+
+/* Para Smartphones (max-width: 767px) - Estilos já aplicados como Mobile-First */
+@media (max-width: 767px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    h2 { font-size: 1.6em; }
+    h3 { font-size: 1.2em; }
+
+    .main-nav ul {
+        display: none;
+        background-color: var(--cor-fundo-secundario);
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        z-index: 1000;
+    }
+    
+    .main-nav.active ul {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .sidebar-menu, .sidebar-menu-toggle {
+        display: none !important;
+    }
+    
+    .post-instagram {
+        max-width: 100%;
+        border-radius: 0;
+    }
+}
+
+
+/* Para Computadores (min-width: 992px) */
+@media (min-width: 992px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 40px;
+        position: relative;
+        padding-left: 280px; /* Espaço para o sidebar-menu quando aberto (250px + 30px de margem) */
+    }
+
+    header h1 {
+        font-size: 2.5em;
+        margin-bottom: 0;
+        flex-grow: 1;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    header .logo {
+        margin-right: 20px;
+    }
+
+    header .logo img {
+        max-height: 100px; /* Logo ainda maior em desktop */
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .main-nav ul {
+        flex-direction: row;
+        padding: 0;
+        display: flex !important;
+    }
+    
+    .main-nav ul li a {
+        background-color: transparent;
+    }
+
+    .main-nav ul li a:hover {
+        background-color: var(--cor-hover-vermelho);
+        border-radius: 5px;
+    }
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: var(--cor-fundo-secundario);
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+        z-index: 1;
+        top: 100%;
+        left: 0;
+        border-radius: 0 0 8px 8px;
+        overflow: hidden;
+        margin-top: 0;
+    }
+
+    .dropdown-content li {
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .dropdown-content li:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown-content a {
+        padding: 12px 20px;
+        color: var(--cor-texto-claro);
+        transition: background-color 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+        background-color: var(--cor-hover-vermelho);
+        color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    main.content-shifted {
+        margin-left: 250px;
+        transition: margin-left 0.3s ease-in-out;
+    }
+
+    #feed-instagram {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        max-width: 900px;
+        gap: 30px;
+        margin: 0 auto;
+    }
+    .post-instagram {
+        max-width: none;
+    }
+
+    #galeria-pinterest {
+        column-count: 3;
+        column-gap: 20px;
+    }
+
+    .pin-card {
+        margin-bottom: 20px;
+    }
+
+    #info-artista {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 30px;
+        text-align: left;
+    }
+
+    #info-artista .perfil-foto {
+        flex-shrink: 0;
+    }
+
+    #info-artista h2 {
+        text-align: left;
+    }
+
+    #info-artista p {
+        text-align: left;
+        margin: 0 0 15px 0;
+    }
+
+    aside.contato-redes {
+        flex-grow: 1;
+    }
+
+    #portifolio {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+    }
+
+    .obra-portifolio {
+        border-top: none;
+        padding-top: 0;
+        margin-top: 0;
+    }
+}
+
+/* ----------------------------------------------------- */
+/* Pequenos Ajustes para Coerência Visual              */
+/* ----------------------------------------------------- */
+figcaption {
+    font-size: 0.85em;
+    color: var(--cor-texto-escuro); /* Figcaptions em preto agora em fundos claros */
+    margin-top: 5px;
+    font-style: italic;
+}

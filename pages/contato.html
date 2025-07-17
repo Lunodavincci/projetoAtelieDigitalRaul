@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ateliê Digital - Contato</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../images/icon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <button class="sidebar-menu-toggle">&#9776;</button> 
+
+        <figure class="logo">
+            <img src="../images/logo.jpg" alt="Logo Ateliê Digital">
+            <figcaption class="sr-only">Ateliê Digital - Sua plataforma de arte</figcaption>
+        </figure>
+        <h1>Bem-vindo ao Ateliê Digital</h1>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../pages/explorar.html">Explorar</a></li>
+                <li><a href="../pages/perfil.html">Artistas</a></li>
+                <li><a href="../pages/contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <aside class="sidebar-menu">
+        <header class="sidebar-header">
+            <figure class="logo">
+                <img src="../images/logo.jpg" alt="Logo Ateliê Digital">
+                <figcaption class="sr-only">Ateliê Digital - Logo do Menu Lateral</figcaption>
+            </figure>
+            <h2>Ateliê Digital</h2>
+        </header>
+        
+        <section class="welcome-content">
+            <h3>Bem-vindo!</h3>
+            <p>Sua plataforma para explorar e conectar-se com o vasto mundo da arte. Descubra obras de talentosos artistas, de pintura a design digital, fotografia e performances. Navegue por categorias e inspire-se na criatividade.</p>
+        </section>
+
+        <nav>
+            <ul>
+                <li><a href="../pages/explorar.html">Explorar Arte</a></li>
+                <li><a href="../pages/perfil.html">Artistas em Destaque</a></li>
+                <li class="dropdown-sidebar">
+                    <a href="#">Categorias de Arte &#9662;</a>
+                    <ul class="dropdown-sidebar-content">
+                        <li><a href="../pages/explorar.html#pintura">Pintura</a></li>
+                        <li><a href="../pages/explorar.html#escultura">Escultura</a></li>
+                        <li><a href="../pages/explorar.html#fotografia">Fotografia</a></li>
+                        <li><a href="../pages/explorar.html#design">Design Digital</a></li>
+                        <li><a href="../pages/explorar.html#ilustracao">Ilustração</a></li>
+                        <li><a href="../pages/explorar.html#musica">Música Experimental</a></li>
+                        <li><a href="../pages/explorar.html#performance">Performance</a></li>
+                        <li><a href="../pages/explorar.html#todos">Todas as Categorias</a></li>
+                    </ul>
+                </li>
+                <li><a href="../pages/contato.html">Envie sua Arte</a></li>
+                <li><a href="../pages/explorar.html">Eventos e Notícias</a></li>
+                <li><a href="../pages/explorar.html">Sobre Nós</a></li>
+                <li><a href="../pages/contato.html">Suporte</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main>
+        <section id="formulario-contato">
+            <h2>Formulário de Contato / Registro de Artista</h2>
+            <form id="artistForm">
+                <label for="nomeCompleto">Nome Completo:</label>
+                <input type="text" id="nomeCompleto" name="nomeCompleto" required>
+
+                <label for="emailContato">E-mail para Contato:</label>
+                <input type="email" id="emailContato" name="emailContato" required>
+
+                <label for="telefone">Telefone (opcional):</label>
+                <input type="tel" id="telefone" name="telefone" pattern="[0-9]{2}[0-9]{4,5}[0-9]{4}" placeholder="Ex: 11987654321">
+
+                <label for="tipoArte">Principal Tipo de Arte:</label>
+                <select id="tipoArte" name="tipoArte" required>
+                    <option value="">Selecione...</option>
+                    <option value="pintura">Pintura</option>
+                    <option value="escultura">Escultura</option>
+                    <option value="fotografia">Fotografia</option>
+                    <option value="design">Design Digital</option>
+                    <option value="ilustracao">Ilustração</option>
+                    <option value="outros">Outros</option>
+                </select>
+
+                <label for="linkPortifolio">Link do Portfólio (se artista):</label>
+                <input type="url" id="linkPortifolio" name="linkPortifolio" placeholder="Ex: https://meuportfolio.com">
+
+                <label for="mensagem">Mensagem / Breve Biografia (se artista):</label>
+                <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+
+                <label for="termos">
+                    <input type="checkbox" id="termos" name="termos" required>
+                    Concordo com os <a href="#" target="_blank">Termos de Serviço</a>
+                </label>
+
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpar</button>
+            </form>
+
+            <section id="dadosExibidos">
+                <h3>Dados do Formulário (Exibição JS):</h3>
+                <p>Preencha o formulário e clique em "Enviar" para ver os dados aqui.</p>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <address>
+            <p>Ateliê Digital &copy; 2025</p>
+            <p>Contato: <a href="mailto:contato@ateliedigital.com">contato@ateliedigital.com</a></p>
+        </address>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
