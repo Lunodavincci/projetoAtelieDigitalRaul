@@ -81,29 +81,32 @@ ul {
 header {
     background-color: var(--cor-fundo-secundario);
     color: var(--cor-texto-claro);
-    padding: 20px 15px;
+    padding: 10px 15px; /* Reduz padding superior/inferior do header */
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 5px; /* Reduz gap entre elementos do header */
     position: relative;
-    padding-left: 70px;
+    padding-left: 70px; /* Espaço para o botão do menu lateral */
 }
 
 header .logo {
-    max-height: 100%;
     margin-bottom: 0px;
 }
 
 header .logo img {
-    max-height: 90px;
+    max-height: 100px; /* Logo maior em mobile também */
     margin: 0 auto;
 }
 
-header h1 {
-    font-size: 2.2em;
-    margin-top: 10px;
+/* O H1 principal agora estará no main */
+main > h1 {
+    color: var(--cor-texto-claro); /* Cor do tema */
+    text-align: center;
+    margin-top: 20px; /* Espaço acima do título principal no main */
+    margin-bottom: 30px; /* Espaço abaixo do título principal */
+    font-size: 2.5em; /* Tamanho maior para título principal */
 }
 
 main {
@@ -157,12 +160,15 @@ footer address p {
 }
 
 /* Navegação (Menu Principal) - Mobile-First */
+.main-nav {
+    width: 100%;
+}
 .main-nav ul {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px; /* Reduz o gap para itens mais próximos */
+    padding: 0;
     width: 100%;
-    padding: 10px 0;
 }
 
 .main-nav ul li {
@@ -172,7 +178,7 @@ footer address p {
 
 .main-nav ul li a {
     display: block;
-    padding: 10px 15px;
+    padding: 8px 15px; /* Reduz padding para itens mais compactos */
     color: var(--cor-texto-claro);
     background-color: var(--cor-fundo-principal);
     border-radius: 5px;
@@ -199,7 +205,7 @@ footer address p {
     display: flex;
 }
 
-/* Dropdown Menu Lateral (Específico para index.html) */
+/* Dropdown Menu Lateral (Agora é uma <nav>) */
 .sidebar-menu {
     position: absolute;
     left: 0;
@@ -244,11 +250,11 @@ footer address p {
     border-bottom: 1px solid var(--cor-borda-escura);
     margin-bottom: 15px;
 }
-
-.sidebar-menu .sidebar-header .logo img {
+/* Removido o estilo para logo dentro do sidebar-header, já que a img foi removida */
+/* .sidebar-menu .sidebar-header .logo img {
     max-height: 50px;
     margin: 0 auto 10px auto;
-}
+} */
 
 .sidebar-menu .sidebar-header h2 {
     font-size: 1.5em;
@@ -256,8 +262,32 @@ footer address p {
     margin: 0;
 }
 
-/* Bem-vindo e explicação dentro do sidebar */
-.sidebar-menu .welcome-content {
+/* Novo estilo para o welcome-content no main */
+.welcome-content-main {
+    background-color: var(--cor-fundo-principal); /* Fundo preto para destaque no main */
+    color: var(--cor-texto-claro); /* Texto branco */
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.welcome-content-main h3 {
+    color: var(--cor-acento-vermelho); /* Título em vermelho */
+    margin-bottom: 10px;
+}
+.welcome-content-main p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: var(--cor-texto-claro);
+}
+
+
+/* Removido o estilo para o welcome-content dentro do sidebar, já que foi movido */
+/* .sidebar-menu .welcome-content {
     padding: 0 20px 20px 20px;
     font-size: 0.9em;
     color: var(--cor-texto-claro);
@@ -267,7 +297,7 @@ footer address p {
 }
 .sidebar-menu .welcome-content p {
     margin-bottom: 10px;
-}
+} */
 
 .sidebar-menu nav {
     width: 100%;
@@ -332,9 +362,7 @@ footer address p {
     display: block;
 }
 
-/* ----------------------------------------------------- */
-/* Estilos Específicos das Páginas                     */
-/* ----------------------------------------------------- */
+/* Estilos Específicos das Páginas */
 
 /* index.html - Layout estilo Instagram */
 #feed-instagram {
@@ -348,9 +376,9 @@ footer address p {
     color: var(--cor-texto-escuro);
 }
 
-/* Título do Feed de Obras */
+/* Título do Feed de Obras (dentro da seção) */
 #feed-instagram > h2 {
-    grid-column: 1 / -1;
+    grid-column: 1 / -1; /* Ocupa todas as colunas */
     text-align: center;
     color: var(--cor-texto-escuro);
     margin-bottom: 20px;
@@ -380,8 +408,8 @@ footer address p {
 }
 
 .post-instagram header .profile-pic {
-    width: 40px;
-    height: 40px;
+    width: 60px; /* Aumenta o tamanho da imagem de perfil */
+    height: 60px; /* Aumenta o tamanho da imagem de perfil */
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--cor-acento-vermelho);
@@ -432,6 +460,11 @@ footer address p {
 .post-instagram .post-actions .comment-count {
     font-size: 0.9em;
     color: var(--cor-texto-escuro);
+}
+
+/* Correção para o espaço da seção #novidades */
+#novidades {
+    margin-top: 40px; /* Adiciona mais espaço no topo para separar do feed */
 }
 
 /* explorar.html - Layout estilo Pinterest */
@@ -623,13 +656,13 @@ aside.contato-redes address p {
     margin-top: 30px;
     border-radius: 8px;
     font-family: monospace;
-    color: var(--cor-texto-claro); /* Mantido em branco para visibilidade no fundo escuro */
+    color: var(--cor-texto-claro);
 }
 
 #dadosExibidos h3 {
     text-align: left;
     margin-bottom: 10px;
-    color: var(--cor-texto-claro); /* Mantido em branco para visibilidade */
+    color: var(--cor-texto-claro);
 }
 #dadosExibidos p {
     color: var(--cor-texto-claro);
@@ -675,7 +708,11 @@ aside.contato-redes address p {
         max-width: 100%;
         border-radius: 0;
     }
+    #novidades {
+        margin-top: 30px;
+    }
 }
+
 
 /* Para Computadores (min-width: 992px) */
 @media (min-width: 992px) {
@@ -709,7 +746,7 @@ aside.contato-redes address p {
 
     .main-nav ul {
         flex-direction: row;
-        gap: 20px; /* Reduz o espaçamento entre os itens */
+        gap: 15px; /* Reduz ainda mais o espaçamento entre os itens da nav */
         padding: 0;
         display: flex !important;
     }
@@ -772,7 +809,7 @@ aside.contato-redes address p {
     #feed-instagram {
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* 2 colunas para o layout 2x2 */
-        max-width: 900px; /* Mantém um limite razoável */
+        max-width: 900px;
         gap: 30px;
         margin: 0 auto;
         padding: 20px;
