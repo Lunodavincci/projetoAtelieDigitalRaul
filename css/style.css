@@ -1,23 +1,22 @@
-/* Importação de fontes Google Fonts (mantido) */
+/* Importação de fontes Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
 
-/* Variáveis CSS para CORES (mantidas do último ajuste) */
+/* Variáveis CSS para CORES */
 :root {
-    --cor-fundo-principal: #121212; /* Preto mais escuro */
-    --cor-fundo-secundario: #1E1E1E; /* Preto um pouco mais claro para contraste */
-    --cor-bege-claro: #F5F5DC; /* Bege claro - Usado para fundos de seções importantes/conteúdo */
-    --cor-bege-escuro: #E0E0C0; /* Bege um pouco mais escuro para hover/bordas claras */
-    --cor-texto-claro: #F0F0F0; /* Branco para texto em fundo escuro */
-    --cor-texto-escuro: #333333; /* Preto para texto em fundo claro (bege) */
-    --cor-acento-vermelho: #E74C3C; /* Vermelho vivo */
-    --cor-borda-escura: #444444; /* Cinza escuro para bordas em fundos escuros */
-    --cor-borda-clara: #D0D0B0; /* Bege mais escuro para bordas em fundos claros */
-    --cor-hover-vermelho: #C0392B; /* Vermelho mais escuro para hover */
+    --cor-fundo-principal: #121212;
+    --cor-fundo-secundario: #1E1E1E;
+    --cor-bege-claro: #F5F5DC;
+    --cor-bege-escuro: #E0E0C0;
+    --cor-texto-claro: #F0F0F0;
+    --cor-texto-escuro: #333333;
+    --cor-acento-vermelho: #E74C3C;
+    --cor-borda-escura: #444444;
+    --cor-borda-clara: #D0D0B0;
+    --cor-hover-vermelho: #C0392B;
 }
 
-/* ----------------------------------------------------- */
 /* Estilos Base e Reset Básico (Mobile-First)          */
-/* ----------------------------------------------------- */
+
 * {
     margin: 0;
     padding: 0;
@@ -93,23 +92,21 @@ header {
     align-items: center;
     gap: 10px;
     position: relative;
-    /* Adicionado padding-left para dar espaço ao menu lateral quando fechado */
-    padding-left: 70px; /* Largura do botão de toggle + margem */
+    padding-left: 70px;
 }
 
-/* Ajuste da logo e H1 para ficarem maiores e centralizados no espaço disponível */
 header .logo {
-    size: 200px;
-    margin-bottom: 0px; /* Reduz margem inferior para aproximar do nav */
+    max-height: 100%; /* Isso não tem efeito direto na imagem img dentro. */
+    margin-bottom: 0px;
 }
 
 header .logo img {
-    max-height: 90px; /* Logo maior */
+    max-height: 90px;
     margin: 0 auto;
 }
 
 header h1 {
-    font-size: 2.2em; /* Título maior em mobile */
+    font-size: 2.2em;
     margin-top: 10px;
 }
 
@@ -165,9 +162,7 @@ footer address p {
     margin-bottom: 5px;
 }
 
-/* ----------------------------------------------------- */
-/* Navegação (Menu Principal) - Mobile-First           */
-/* ----------------------------------------------------- */
+/* Navegação (Menu Principal) - Mobile-First */
 .main-nav ul {
     display: flex;
     flex-direction: column;
@@ -210,35 +205,33 @@ footer address p {
     display: flex;
 }
 
-/* ----------------------------------------------------- */
-/* Dropdown Menu Lateral (Específico para index.html)  */
-/* ----------------------------------------------------- */
+/* Dropdown Menu Lateral (Específico para index.html) */
 .sidebar-menu {
-    position: absolute; /* Para que não afete o layout normal */
+    position: absolute;
     left: 0;
-    top: 0; /* Alinha com o topo do header */
-    height: 100%; /* Altura total do header */
-    width: 250px; /* Largura do menu lateral */
-    background-color: var(--cor-fundo-secundario); /* Fundo do menu lateral em preto */
+    top: 0;
+    height: 100%;
+    width: 250px;
+    background-color: var(--cor-fundo-secundario);
     border-right: 1px solid var(--cor-borda-escura);
-    padding-top: 20px; /* Espaçamento do topo */
+    padding-top: 20px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.5);
     z-index: 100;
-    transform: translateX(-100%); /* Escondido por padrão */
+    transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
-    display: flex; /* Para organizar o conteúdo do sidebar */
+    display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Alinha itens à esquerda */
+    align-items: flex-start;
 }
 
 .sidebar-menu.open {
-    transform: translateX(0); /* Mostra o menu quando 'open' é adicionado */
+    transform: translateX(0);
 }
 
 .sidebar-menu-toggle {
     position: absolute;
-    top: 20px; /* Alinha com o topo do header */
-    left: 20px; /* Mais perto da borda esquerda */
+    top: 20px;
+    left: 20px;
     background-color: var(--cor-acento-vermelho);
     color: var(--cor-texto-claro);
     padding: 8px 12px;
@@ -246,7 +239,7 @@ footer address p {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.2em;
-    z-index: 101; /* Acima do sidebar */
+    z-index: 101;
 }
 
 /* Título e Logo dentro do sidebar */
@@ -259,12 +252,12 @@ footer address p {
 }
 
 .sidebar-menu .sidebar-header .logo img {
-    max-height: 50px; /* Logo menor dentro do sidebar */
+    max-height: 50px;
     margin: 0 auto 10px auto;
 }
 
 .sidebar-menu .sidebar-header h2 {
-    font-size: 1.5em; /* Título do sidebar */
+    font-size: 1.5em;
     color: var(--cor-texto-claro);
     margin: 0;
 }
@@ -283,24 +276,24 @@ footer address p {
 }
 
 .sidebar-menu nav {
-    width: 100%; /* Navegação ocupa toda a largura do sidebar */
+    width: 100%;
 }
 
 .sidebar-menu ul {
     display: flex;
     flex-direction: column;
-    padding: 0; /* Remove padding extra da ul */
-    gap: 0; /* Remove gap */
+    padding: 0;
+    gap: 0;
 }
 
 .sidebar-menu ul li a {
     display: block;
-    padding: 12px 20px; /* Mais padding para os itens do menu */
+    padding: 12px 20px;
     color: var(--cor-texto-claro);
-    font-size: 1em; /* Ajusta tamanho da fonte */
+    font-size: 1em;
     border-bottom: 1px solid var(--cor-borda-escura);
     transition: background-color 0.2s ease, color 0.2s ease;
-    text-align: left; /* Alinha texto à esquerda */
+    text-align: left;
 }
 
 .sidebar-menu ul li:last-child a {
@@ -315,23 +308,22 @@ footer address p {
 /* Sub-menu dropdown dentro do sidebar */
 .sidebar-menu .dropdown-sidebar-content {
     display: none;
-    background-color: #282828; /* Um tom mais escuro de preto */
-    padding-left: 20px; /* Indentação para sub-itens */
-    border-top: none; /* Remove borda extra */
-    border-bottom: 1px solid var(--cor-borda-escura); /* Adiciona borda inferior para separar */
+    background-color: #282828;
+    padding-left: 20px;
+    border-top: none;
+    border-bottom: 1px solid var(--cor-borda-escura);
 }
 .sidebar-menu li.dropdown-sidebar.open .dropdown-sidebar-content {
-    border-bottom: none; /* Remove borda inferior do item pai quando o sub-menu está aberto */
+    border-bottom: none;
 }
 .sidebar-menu .dropdown-sidebar-content li:last-child a {
-    border-bottom: none; /* Último item do sub-menu sem borda */
+    border-bottom: none;
 }
 
-
 .sidebar-menu .dropdown-sidebar-content li a {
-    font-size: 0.9em; /* Menor fonte para sub-itens */
-    padding: 10px 10px 10px 30px; /* Mais padding à esquerda para indentação visual */
-    border-bottom: none; /* Remove borda para sub-itens */
+    font-size: 0.9em;
+    padding: 10px 10px 10px 30px;
+    border-bottom: none;
 }
 
 .sidebar-menu .dropdown-sidebar-content li:last-child a {
@@ -357,6 +349,18 @@ footer address p {
     flex-direction: column;
     gap: 30px;
 }
+/* Título do Feed de Obras */
+#feed-instagram > h2 { /* Aplica apenas ao h2 direto dentro de #feed-instagram */
+    color: var(--cor-texto-escuro); /* Texto preto em fundo bege */
+    background-color: var(--cor-bege-claro); /* Fundo da seção */
+    padding-bottom: 10px; /* Espaço abaixo do título */
+    margin-bottom: 15px; /* Espaço entre o título e os posts */
+    text-align: center;
+    width: 100%; /* Ocupa a largura da seção */
+    border-radius: 8px 8px 0 0; /* Apenas topo arredondado se for o primeiro elemento da section */
+    box-shadow: none; /* Remove a sombra da section, para que o título não tenha uma extra */
+}
+
 
 .post-instagram {
     background-color: white;
@@ -436,7 +440,7 @@ footer address p {
 
 /* explorar.html - Layout estilo Pinterest */
 #galeria-pinterest {
-    column-count: 1; /* Uma coluna em mobile */
+    column-count: 1;
     column-gap: 15px;
     padding: 0;
 }
@@ -624,14 +628,19 @@ aside.contato-redes address p {
     margin-top: 30px;
     border-radius: 8px;
     font-family: monospace;
-    color: var(--cor-texto-claro);
+    color: var(--cor-texto-claro); /* Mantido em branco para visibilidade no fundo escuro */
 }
 
 #dadosExibidos h3 {
     text-align: left;
     margin-bottom: 10px;
+    color: var(--cor-texto-claro); /* Mantido em branco para visibilidade */
+}
+/* Adicionado para garantir que os parágrafos internos também sejam brancos */
+#dadosExibidos p {
     color: var(--cor-texto-claro);
 }
+
 
 /* ----------------------------------------------------- */
 /* Media Queries - Responsividade                      */
@@ -710,6 +719,7 @@ aside.contato-redes address p {
 
     .main-nav ul {
         flex-direction: row;
+        gap: 20px; /* Reduz o espaçamento entre os itens */
         padding: 0;
         display: flex !important;
     }
@@ -832,7 +842,7 @@ aside.contato-redes address p {
 /* ----------------------------------------------------- */
 figcaption {
     font-size: 0.85em;
-    color: var(--cor-texto-escuro); /* Figcaptions em preto agora em fundos claros */
+    color: var(--cor-texto-escuro);
     margin-top: 5px;
     font-style: italic;
 }

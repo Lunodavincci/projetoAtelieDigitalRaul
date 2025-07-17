@@ -1,27 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // MENU HAMBÚRGUER 
     const mainNav = document.querySelector('.main-nav');
     const header = document.querySelector('header');
     
-    const menuToggle = document.createElement('button');
-    menuToggle.classList.add('menu-toggle');
-    menuToggle.innerHTML = '&#9776; Menu';
-
     if (mainNav && header) {
-        if (window.innerWidth <= 767 || !document.querySelector('.sidebar-menu-toggle')) {
+        const isIndexPage = document.body.classList.contains('index-page'); 
+        
+        if (!isIndexPage || window.innerWidth <= 767) { 
+            const menuToggle = document.createElement('button');
+            menuToggle.classList.add('menu-toggle');
+            menuToggle.innerHTML = '&#9776; Menu';
             header.insertBefore(menuToggle, mainNav);
+
+            menuToggle.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+            });
         }
     }
 
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            if (mainNav) {
-                mainNav.classList.toggle('active');
-            }
-        });
-    }
-
-    // MENU LATERAL 
     const sidebarMenu = document.querySelector('.sidebar-menu');
     const sidebarMenuToggle = document.querySelector('.sidebar-menu-toggle');
     const mainContent = document.getElementById('main-content');
@@ -41,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // FORMULÁRIO
+    // Lógica para o FORMULÁRIO (requisito F)
     const artistForm = document.getElementById('artistForm');
     const dadosExibidos = document.getElementById('dadosExibidos');
 
