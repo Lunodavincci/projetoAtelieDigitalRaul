@@ -41,8 +41,8 @@ a:hover {
 
 img {
     max-width: 100%;
-    height: auto; /* Adicionado para garantir o aspecto */
-    display: block; /* Para evitar espaçamento extra */
+    height: auto; 
+    display: block; 
 }
 
 h1, h2, h3 {
