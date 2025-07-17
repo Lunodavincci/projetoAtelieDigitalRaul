@@ -22,7 +22,7 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'arial', sans-serif;
     line-height: 1.6;
     color: var(--cor-texto-claro);
     background-color: var(--cor-fundo-principal);
@@ -80,37 +80,27 @@ ul {
 header {
     background-color: var(--cor-fundo-secundario);
     color: var(--cor-texto-claro);
-    padding: 10px 15px; /* Reduz padding superior/inferior do header */
+    padding: 10px 15px; 
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 5px; /* Reduz gap entre elementos do header */
+    gap: 5px; 
     position: relative;
-    padding-left: 70px; /* Espaço para o botão do menu lateral */
+    padding-left: 70px; 
 }
 
-header .logo {
-    display: block;
-    max-height: 200px;
-    justify-content: center;
-    margin-bottom: 0px;
+header .logo{
+    max-width: 140px;
 }
 
-header .logo img {
-    justify-content: center;
-    max-height: 200px; /* Logo maior em mobile também */
-    margin: 0 auto;
-}
-
-/* O H1 principal agora estará no main */
 main > h1 {
-    color: var(--cor-texto-claro); /* Cor do tema */
+    color: var(--cor-texto-claro);
     text-align: center;
-    margin-top: 20px; /* Espaço acima do título principal no main */
-    margin-bottom: 30px; /* Espaço abaixo do título principal */
-    font-size: 2.5em; /* Tamanho maior para título principal */
+    margin-top: 20px; 
+    margin-bottom: 30px; 
+    font-size: 2.5em; 
 }
 
 main {
@@ -165,12 +155,12 @@ footer address p {
 
 /* Navegação (Menu Principal) - Mobile-First */
 .main-nav {
-    display: block;
+    display: inline;
     width: 100%;
 }
 
 .main-nav ul {
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .main-nav ul li {
@@ -207,7 +197,7 @@ footer address p {
     display: flex;
 }
 
-/* Dropdown Menu Lateral (Agora é uma <nav>) */
+/* Dropdown Menu Lateral */
 .sidebar-menu {
     position: absolute;
     left: 0;
@@ -261,8 +251,8 @@ footer address p {
 
 /* Novo estilo para o welcome-content no main */
 .welcome-content-main {
-    background-color: var(--cor-fundo-principal); /* Fundo preto para destaque no main */
-    color: var(--cor-texto-claro); /* Texto branco */
+    background-color: var(--cor-fundo-principal); 
+    color: var(--cor-texto-claro);
     padding: 25px;
     margin-bottom: 30px;
     border-radius: 8px;
@@ -273,7 +263,7 @@ footer address p {
     margin-right: auto;
 }
 .welcome-content-main h3 {
-    color: var(--cor-acento-vermelho); /* Título em vermelho */
+    color: var(--cor-acento-vermelho); 
     margin-bottom: 10px;
 }
 .welcome-content-main p {
@@ -349,7 +339,7 @@ footer address p {
 /* index.html - Layout estilo Instagram */
 #feed-instagram {
     display: grid;
-    grid-template-columns: 1fr; /* Uma coluna em mobile */
+    grid-template-columns: 1fr; 
     gap: 30px;
     padding: 20px;
     background-color: var(--cor-bege-claro);
@@ -360,7 +350,7 @@ footer address p {
 
 /* Título do Feed de Obras (dentro da seção) */
 #feed-instagram > h2 {
-    grid-column: 1 / -1; /* Ocupa todas as colunas */
+    grid-column: 1 / -1; 
     text-align: center;
     color: var(--cor-texto-escuro);
     margin-bottom: 20px;
@@ -448,10 +438,10 @@ footer address p {
 #novidades {
     margin-top: 40px;
 }
-/* Estilo para as notícias - imagem à esquerda, texto à direita */
+
 .noticia {
     display: flex;
-    flex-direction: column; /* Padrão mobile: um abaixo do outro */
+    flex-direction: column; 
     align-items: flex-start;
     gap: 15px;
     margin-bottom: 25px;
@@ -465,7 +455,7 @@ footer address p {
 
 .noticia img {
     width: 100%;
-    max-width: 250px; /* Limita largura da imagem em mobile/tablet */
+    max-width: 250px; 
     height: auto;
     object-fit: cover;
     border-radius: 5px;
@@ -497,7 +487,7 @@ footer address p {
 aside.data-publicacao {
     font-size: 0.8em;
     color: #666;
-    align-self: flex-end; /* Alinha a data à direita em coluna */
+    align-self: flex-end; 
 }
 
 
@@ -752,14 +742,14 @@ aside.contato-redes address p {
         text-align: center;
     }
     .noticia img {
-        margin-bottom: 15px; /* Espaço entre imagem e texto */
-        max-width: 100%; /* Imagem ocupa largura total em mobile */
+        margin-bottom: 15px; 
+        max-width: 100%; 
     }
     .noticia-content h3, .noticia-content p {
-        text-align: center; /* Centraliza texto da notícia em mobile */
+        text-align: center; 
     }
     aside.data-publicacao {
-        align-self: center; /* Centraliza a data em mobile */
+        align-self: center; 
     }
 }
 
@@ -771,7 +761,7 @@ aside.contato-redes address p {
         justify-content: space-between;
         padding: 20px 40px;
         position: relative;
-        padding-left: 280px; /* Espaço para o sidebar-menu quando aberto (250px + 30px de margem) */
+        padding-left: 280px;
     }
 
     header h1 {
@@ -782,12 +772,8 @@ aside.contato-redes address p {
         margin-left: 0;
     }
 
-    header .logo {
-        margin-right: 20px;
-    }
-
     header .logo img {
-        max-height: 100px; /* Logo ainda maior em desktop */
+        max-height: 170px; 
     }
 
     .menu-toggle {
@@ -796,7 +782,7 @@ aside.contato-redes address p {
 
     .main-nav ul {
         flex-direction: row;
-        gap: 15px; /* Reduz ainda mais o espaçamento entre os itens da nav */
+        gap: 15px; 
         padding: 0;
         display: flex !important;
     }
