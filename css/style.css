@@ -41,6 +41,8 @@ a:hover {
 
 img {
     max-width: 100%;
+    height: auto; /* Adicionado para garantir o aspecto */
+    display: block; /* Para evitar espaçamento extra */
 }
 
 h1, h2, h3 {
@@ -83,6 +85,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 5px; /* Reduz gap entre elementos do header */
     position: relative;
     padding-left: 70px; /* Espaço para o botão do menu lateral */
@@ -177,7 +180,7 @@ footer address p {
 
 .main-nav ul li a {
     display: block;
-    padding: 8px 15px; /* Reduz padding para itens mais compactos */
+    padding: 8px 15px;
     color: var(--cor-texto-claro);
     background-color: var(--cor-fundo-principal);
     border-radius: 5px;
@@ -249,11 +252,6 @@ footer address p {
     border-bottom: 1px solid var(--cor-borda-escura);
     margin-bottom: 15px;
 }
-/* Removido o estilo para logo dentro do sidebar-header, já que a img foi removida */
-/* .sidebar-menu .sidebar-header .logo img {
-    max-height: 50px;
-    margin: 0 auto 10px auto;
-} */
 
 .sidebar-menu .sidebar-header h2 {
     font-size: 1.5em;
@@ -284,19 +282,6 @@ footer address p {
     color: var(--cor-texto-claro);
 }
 
-
-/* Removido o estilo para o welcome-content dentro do sidebar, já que foi movido */
-/* .sidebar-menu .welcome-content {
-    padding: 0 20px 20px 20px;
-    font-size: 0.9em;
-    color: var(--cor-texto-claro);
-    text-align: justify;
-    border-bottom: 1px solid var(--cor-borda-escura);
-    margin-bottom: 15px;
-}
-.sidebar-menu .welcome-content p {
-    margin-bottom: 10px;
-} */
 
 .sidebar-menu nav {
     width: 100%;
@@ -337,6 +322,7 @@ footer address p {
     border-bottom: 1px solid var(--cor-borda-escura);
 }
 .sidebar-menu li.dropdown-sidebar.open .dropdown-sidebar-content {
+    display: block;
     border-bottom: none;
 }
 .sidebar-menu .dropdown-sidebar-content li:last-child a {
@@ -357,9 +343,6 @@ footer address p {
     background-color: #3A3A3A;
 }
 
-.sidebar-menu li.dropdown-sidebar.open .dropdown-sidebar-content {
-    display: block;
-}
 
 /* Estilos Específicos das Páginas */
 
@@ -407,8 +390,8 @@ footer address p {
 }
 
 .post-instagram header .profile-pic {
-    width: 60px; /* Aumenta o tamanho da imagem de perfil */
-    height: 60px; /* Aumenta o tamanho da imagem de perfil */
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--cor-acento-vermelho);
@@ -463,8 +446,60 @@ footer address p {
 
 /* Correção para o espaço da seção #novidades */
 #novidades {
-    margin-top: 40px; /* Adiciona mais espaço no topo para separar do feed */
+    margin-top: 40px;
 }
+/* Estilo para as notícias - imagem à esquerda, texto à direita */
+.noticia {
+    display: flex;
+    flex-direction: column; /* Padrão mobile: um abaixo do outro */
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--cor-borda-clara);
+}
+
+.noticia:last-child {
+    border-bottom: none;
+}
+
+.noticia img {
+    width: 100%;
+    max-width: 250px; /* Limita largura da imagem em mobile/tablet */
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.noticia-content {
+    flex-grow: 1;
+    color: var(--cor-texto-escuro);
+}
+
+.noticia-content h3 {
+    text-align: left;
+    margin-bottom: 5px;
+    color: var(--cor-texto-escuro);
+}
+.noticia-content p {
+    font-size: 0.95em;
+    margin-bottom: 10px;
+}
+.noticia-content a {
+    color: var(--cor-acento-vermelho);
+    font-weight: bold;
+}
+.noticia-content a:hover {
+    color: var(--cor-hover-vermelho);
+    text-decoration: underline;
+}
+
+aside.data-publicacao {
+    font-size: 0.8em;
+    color: #666;
+    align-self: flex-end; /* Alinha a data à direita em coluna */
+}
+
 
 /* explorar.html - Layout estilo Pinterest */
 #galeria-pinterest {
@@ -710,6 +745,22 @@ aside.contato-redes address p {
     #novidades {
         margin-top: 30px;
     }
+    /* Notícias em mobile: imagem e texto empilhados */
+    .noticia {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .noticia img {
+        margin-bottom: 15px; /* Espaço entre imagem e texto */
+        max-width: 100%; /* Imagem ocupa largura total em mobile */
+    }
+    .noticia-content h3, .noticia-content p {
+        text-align: center; /* Centraliza texto da notícia em mobile */
+    }
+    aside.data-publicacao {
+        align-self: center; /* Centraliza a data em mobile */
+    }
 }
 
 
@@ -867,9 +918,27 @@ aside.contato-redes address p {
         padding-top: 0;
         margin-top: 0;
     }
+
+    .noticia {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .noticia img {
+        margin-right: 20px;
+        margin-bottom: 0;
+        max-width: 300px; 
+    }
+    .noticia-content h3, .noticia-content p {
+        text-align: left;
+    }
+    aside.data-publicacao {
+        align-self: flex-start;
+        margin-top: 0;
+        margin-left: auto;
+    }
 }
 
-/* Pequenos Ajustes para Coerência Visual */
 figcaption {
     font-size: 0.85em;
     color: var(--cor-texto-escuro);
