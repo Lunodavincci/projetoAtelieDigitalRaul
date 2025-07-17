@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/icon.ico" type="image/x-icon">
 </head>
-<body>
+<body class="index-page">
     <header>
         <button class="sidebar-menu-toggle">&#9776;</button> 
 
@@ -26,9 +26,13 @@
         </nav>
     </header>
 
-    <nav class="sidebar-menu">
+    <aside class="sidebar-menu">
         <header class="sidebar-header">
-            <br><h2>Ateliê Digital</h2>
+            <figure class="logo">
+                <img src="images/logo.jpg" alt="Logo Ateliê Digital">
+                <figcaption class="sr-only">Ateliê Digital - Logo do Menu Lateral</figcaption>
+            </figure>
+            <h2>Ateliê Digital</h2>
         </header>
         
         <section class="welcome-content">
@@ -59,7 +63,7 @@
                 <li><a href="pages/contato.html">Suporte</a></li>
             </ul>
         </nav>
-    </nav>
+    </aside>
 
     <main id="main-content">
         <section id="feed-instagram">
@@ -83,7 +87,7 @@
 
             <article class="post-instagram">
                 <header>
-                    <img src="images/index/" alt="Foto de perfil de Artista" class="profile-pic">
+                    <img src="images/index/a2.jpg" alt="Foto de perfil de Artista" class="profile-pic">
                     <h3>Ana Silva</h3>
                 </header>
                 <figure class="post-image">
@@ -100,7 +104,7 @@
 
             <article class="post-instagram">
                 <header>
-                    <img src="images/perfil_exemplo.jpg" alt="Foto de perfil de Artista" class="profile-pic">
+                    <img src="images/index/ax.jpg" alt="Foto de perfil de Artista" class="profile-pic">
                     <h3>Artista Z</h3>
                 </header>
                 <figure class="post-image">
@@ -132,14 +136,30 @@
                 </div>
             </article>
         </section>
-
+        <br>
         <section id="novidades">
-            <h2>Últimas Novidades</h2>
+            <h2>Últimas Notícias</h2>
             <article class="noticia">
                 <h3>Exposição Virtual: Cores do Brasil</h3>
-                <p>Descubra a nova exposição virtual com artistas emergentes do cenário brasileiro.</p>
+                <p>Descubra a nova exposição virtual com artistas emergentes do cenário brasileiro, explorando a diversidade da nossa cultura através de cores e formas vibrantes.</p>
                 <aside class="data-publicacao">
                     <time datetime="2025-07-16">16 de Julho de 2025</time>
+                </aside>
+            </article>
+
+            <article class="noticia">
+                <h3>Workshop de Ilustração Digital para Iniciantes</h3>
+                <p>Inscreva-se em nosso workshop online e aprenda as técnicas essenciais de ilustração digital, desde o rascunho até a finalização, com ferramentas modernas.</p>
+                <aside class="data-publicacao">
+                    <time datetime="2025-07-10">10 de Julho de 2025</time>
+                </aside>
+            </article>
+
+            <article class="noticia">
+                <h3>Lançamento: Novo Livro de Arte Conceitual</h3>
+                <p>O Ateliê Digital tem o prazer de anunciar o lançamento do livro "Ideias Abstratas", uma coletânea de conceitos e projetos que desafiam a percepção artística.</p>
+                <aside class="data-publicacao">
+                    <time datetime="2025-07-05">05 de Julho de 2025</time>
                 </aside>
             </article>
         </section>
@@ -152,7 +172,5 @@
             <p>Endereço: Rua da Arte, 123 - Cidade Criativa - BR</p>
         </address>
     </footer>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
